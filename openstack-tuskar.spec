@@ -73,6 +73,9 @@ install -d -m 755 %{buildroot}%{_sysconfdir}/tuskar
 # Move config to /etc
 mv etc/tuskar/tuskar.conf.sample %{buildroot}%{_sysconfdir}/tuskar/tuskar.conf
 
+# Move the migrate.cfg file into the built python directory
+mv tuskar/db/sqlalchemy/migrate_repo/migrate.cfg %{python2_sitelib/tuskar/db/sqlalchemy/migrate_repo/migrate.cfg
+
 # install systemd scripts
 install -d -m 755 %{buildroot}%{_unitdir}
 install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}
